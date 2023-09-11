@@ -1,5 +1,5 @@
-const Constant = {
+const CONSTANT = {
   LIMIT_NUMBER: 3,
 };
 
-module.exports = Constant;
+module.exports = CONSTANT;
