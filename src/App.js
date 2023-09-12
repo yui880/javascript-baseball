@@ -31,7 +31,13 @@ class App {
     }
   }
 
-  askToRestartGame() {}
+  askToRestartGame() {
+    Console.readLine(Messages.ASK_TO_RESTART, (userInput) => {
+      if (!Expection.checkIsOneOrTwo(userInput)) {
+        throw new Error(ERROR.IS_NOT_ONE_OR_TWO);
+      }
+    });
+  }
 
   play() {
     Console.print(Messages.GAME_START);
