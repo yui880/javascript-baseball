@@ -12,6 +12,10 @@ class BaseBallGame {
     }
     return randomNumber;
   }
+
+  static shuffleNumber(numArr) {
+    return Random.shuffle(numArr);
+  }
 }
 
 module.exports = BaseBallGame;
