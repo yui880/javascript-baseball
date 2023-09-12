@@ -14,6 +14,12 @@ class Exception {
     if (number.replace(REGEX.REMOVE_ZERO, '') === number) return true;
     return false;
   }
+
+  static checkIsAllDifferent(number) {
+    const set = new Set(number.split(''));
+    if (set.size === number.length) return true;
+    return false;
+  }
 }
 
 module.exports = Exception;
