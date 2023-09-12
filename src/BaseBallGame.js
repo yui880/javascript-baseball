@@ -32,6 +32,8 @@ class BaseBallGame {
       throw new Error(ERROR.HAVE_SAME_NUMBER);
     }
   }
+
+  static compareUserInputWithAnswer(answer, userInput) {}
 }
 
 module.exports = BaseBallGame;

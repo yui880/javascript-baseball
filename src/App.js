@@ -15,7 +15,12 @@ class App {
   getUserNumberInput() {
     Console.readLine(Messages.ENTER_NUMBER_INPUT, (userInput) => {
       BaseBallGame.checkIsRightInput(userInput);
+      this.printScore(userInput);
     });
+  }
+
+  printScore(userInput) {
+    const score = BaseBallGame.compareUserInputWithAnswer(this.answerNumber, userInput);
   }
 
   play() {
@@ -25,7 +30,7 @@ class App {
   }
 }
 
+module.exports = App;
+
 const app = new App();
 app.play();
-
-module.exports = App;
