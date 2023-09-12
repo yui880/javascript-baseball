@@ -16,6 +16,8 @@ class BaseBallGame {
   static shuffleNumber(numArr) {
     return Random.shuffle(numArr);
   }
+
+  static checkIsRightAnswer(userAnswer) {}
 }
 
 module.exports = BaseBallGame;
