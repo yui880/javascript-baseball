@@ -38,6 +38,8 @@ class BaseBallGame {
     const userInputArr = userInput.split('').map(Number);
     const strikeCount = this.countStrike(answer, userInputArr);
     const ballCount = this.countBall(answer, userInputArr);
+
+    return this.getScoreMessage(strikeCount, ballCount);
   }
 
   static countStrike(answer, userInput) {
@@ -58,6 +60,7 @@ class BaseBallGame {
 
   static getScoreMessage(strike, ball) {
     let message = '';
+    if (!ball && !strike) message = MESSAGES.NOTHING;
     if (ball) message += ball + MESSAGES.BALL;
     if (ball && strike) message += ' ';
     if (strike) message += strike + MESSAGES.STRIKE;
