@@ -14,7 +14,7 @@ class App {
 
   getUserNumberInput() {
     Console.readLine(Messages.ENTER_NUMBER_INPUT, (userInput) => {
-      BaseBallGame.checkIsRightAnswer(userInput);
+      BaseBallGame.checkIsRightInput(userInput);
     });
   }
 

@@ -1,5 +1,7 @@
 const { Random } = require('@woowacourse/mission-utils');
-const CONSTANT = require('./constants/Constant');
+const { Console } = require('@woowacourse/mission-utils');
+const { CONSTANT } = require('./constants/Constant');
+const Exception = require('./Exception');
 
 class BaseBallGame {
   static getRandomNumber() {
@@ -17,7 +19,7 @@ class BaseBallGame {
     return Random.shuffle(numArr);
   }
 
-  static checkIsRightAnswer(userAnswer) {}
+  static checkIsRightInput(userInput) {}
 }
 
 module.exports = BaseBallGame;
