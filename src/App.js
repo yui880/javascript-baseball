@@ -21,6 +21,8 @@ class App {
 
   printScore(userInput) {
     const score = BaseBallGame.compareUserInputWithAnswer(this.answerNumber, userInput);
+    Console.print(score);
+    if (score !== Messages.THREE_STRIKE) this.getUserNumberInput();
   }
 
   play() {
