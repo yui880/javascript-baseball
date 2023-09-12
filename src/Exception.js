@@ -20,6 +20,10 @@ class Exception {
     if (set.size === number.length) return true;
     return false;
   }
+
+  static checkIsOneOrTwo(number) {
+    return number === '1' || number === '2';
+  }
 }
 
 module.exports = Exception;

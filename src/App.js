@@ -1,6 +1,8 @@
 const { Console } = require('@woowacourse/mission-utils');
 const Messages = require('./constants/Messages');
 const BaseBallGame = require('./BaseBallGame');
+const Expection = require('./Exception');
+const { ERROR } = require('./constants/Constant');
 
 class App {
   constructor() {
@@ -23,7 +25,13 @@ class App {
     const score = BaseBallGame.compareUserInputWithAnswer(this.answerNumber, userInput);
     Console.print(score);
     if (score !== Messages.THREE_STRIKE) this.getUserNumberInput();
+    if (score === Messages.THREE_STRIKE) {
+      Console.print(Messages.ANSWER_CORRECTLY);
+      this.askToRestartGame();
+    }
   }
+
+  askToRestartGame() {}
 
   play() {
     Console.print(Messages.GAME_START);
