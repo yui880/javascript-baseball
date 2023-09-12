@@ -52,8 +52,9 @@ class BaseBallGame {
 
   static countBall(answer, userInput) {
     let count = 0;
-    userInput.forEach((num) => {
-      if (answer.includes(num)) count += 1;
+    userInput.forEach((num, i) => {
+      const index = answer.indexOf(num);
+      if (index >= 0 && index !== i) count += 1;
     });
     return count;
   }
