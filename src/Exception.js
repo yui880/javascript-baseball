@@ -4,7 +4,8 @@ class Exception {
   }
 
   static checkIsNumber(number) {
-    return !Number.isNaN(number);
+    if (number.replace(REGEX.REMOVE_STRING, '') === number) return true;
+    return false;
   }
 }
 

@@ -2,4 +2,8 @@ const CONSTANT = {
   LIMIT_NUMBER: 3,
 };
 
-module.exports = CONSTANT;
+const REGEX = {
+  REMOVE_STRING: /[a-z]/gi,
+};
+
+module.exports = { CONSTANT, REGEX };
