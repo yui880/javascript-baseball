@@ -33,7 +33,18 @@ class BaseBallGame {
     }
   }
 
-  static compareUserInputWithAnswer(answer, userInput) {}
+  static compareUserInputWithAnswer(answer, userInput) {
+    const userInputArr = userInput.split('');
+    const strikeCount = this.countStrike(answer, userInputArr);
+  }
+
+  static countStrike(answer, userInput) {
+    let count = 0;
+    for (let i = 0; i < userInput.length; i++) {
+      if (answer[i] === userInput[i]) count++;
+    }
+    return count;
+  }
 }
 
 module.exports = BaseBallGame;
