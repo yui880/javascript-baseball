@@ -34,15 +34,24 @@ class BaseBallGame {
   }
 
   static compareUserInputWithAnswer(answer, userInput) {
-    const userInputArr = userInput.split('');
+    const userInputArr = userInput.split('').map(Number);
     const strikeCount = this.countStrike(answer, userInputArr);
+    const ballCount = this.countBall(answer, userInputArr);
   }
 
   static countStrike(answer, userInput) {
     let count = 0;
     for (let i = 0; i < userInput.length; i++) {
-      if (answer[i] === userInput[i]) count++;
+      if (answer[i] === userInput[i]) count += 1;
     }
+    return count;
+  }
+
+  static countBall(answer, userInput) {
+    let count = 0;
+    userInput.forEach((num) => {
+      if (answer.includes(num)) count += 1;
+    });
     return count;
   }
 }
