@@ -1,5 +1,6 @@
 const { Random } = require('@woowacourse/mission-utils');
 const { CONSTANT, ERROR } = require('./constants/Constant');
+const MESSAGES = require('./constants/Messages');
 const Exception = require('./Exception');
 
 class BaseBallGame {
@@ -53,6 +54,15 @@ class BaseBallGame {
       if (answer.includes(num)) count += 1;
     });
     return count;
+  }
+
+  static getScoreMessage(strike, ball) {
+    let message = '';
+    if (ball) message += ball + MESSAGES.BALL;
+    if (ball && strike) message += ' ';
+    if (strike) message += strike + MESSAGES.STRIKE;
+
+    return message;
   }
 }
 
