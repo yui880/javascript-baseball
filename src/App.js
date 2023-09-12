@@ -36,7 +36,14 @@ class App {
       if (!Expection.checkIsOneOrTwo(userInput)) {
         throw new Error(ERROR.IS_NOT_ONE_OR_TWO);
       }
+      userInput === '1' ? this.restart() : Console.close();
     });
+  }
+
+  restart() {
+    this.answerNumber = [];
+    this.setAnswerNumber();
+    this.getUserNumberInput();
   }
 
   play() {
