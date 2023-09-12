@@ -7,4 +7,11 @@ const REGEX = {
   REMOVE_ZERO: /0/g,
 };
 
-module.exports = { CONSTANT, REGEX };
+const ERROR = {
+  NOT_A_THREE_DIGIT: '입력된 값이 세자리 숫자가 아닙니다.',
+  HAVE_ZERO: '입력값에 0이 포함되어 있습니다.',
+  NOT_A_NUMBER: '입력값이 숫자가 아닙니다',
+  HAVE_SAME_NUMBER: '같은 숫자가 여러번 입력되었습니다.',
+};
+
+module.exports = { CONSTANT, REGEX, ERROR };

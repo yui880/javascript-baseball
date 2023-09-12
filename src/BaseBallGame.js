@@ -1,6 +1,5 @@
 const { Random } = require('@woowacourse/mission-utils');
-const { Console } = require('@woowacourse/mission-utils');
-const { CONSTANT } = require('./constants/Constant');
+const { CONSTANT, ERROR } = require('./constants/Constant');
 const Exception = require('./Exception');
 
 class BaseBallGame {
@@ -19,7 +18,20 @@ class BaseBallGame {
     return Random.shuffle(numArr);
   }
 
-  static checkIsRightInput(userInput) {}
+  static checkIsRightInput(userInput) {
+    if (!Exception.checkIsNumber(userInput)) {
+      throw new Error(ERROR.NOT_A_NUMBER);
+    }
+    if (!Exception.checkIsThreeDigitNumber(userInput)) {
+      throw new Error(ERROR.NOT_A_THREE_DIGIT);
+    }
+    if (!Exception.checkIsNotHaveZero(userInput)) {
+      throw new Error(ERROR.HAVE_ZERO);
+    }
+    if (!Exception.checkIsAllDifferent(userInput)) {
+      throw new Error(ERROR.HAVE_SAME_NUMBER);
+    }
+  }
 }
 
 module.exports = BaseBallGame;
