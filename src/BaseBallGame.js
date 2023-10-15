@@ -15,10 +15,6 @@ class BaseBallGame {
     return randomNumber;
   }
 
-  static shuffleNumber(numArr) {
-    return Random.shuffle(numArr);
-  }
-
   static checkIsRightInput(userInput) {
     if (!Exception.checkIsNumber(userInput)) {
       throw new Error(ERROR.NOT_A_NUMBER);

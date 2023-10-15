@@ -10,8 +10,7 @@ class App {
   }
 
   setAnswerNumber() {
-    const tempNumber = BaseBallGame.getRandomNumber();
-    this.answerNumber = BaseBallGame.shuffleNumber(tempNumber);
+    this.answerNumber = BaseBallGame.getRandomNumber();
   }
 
   getUserNumberInput() {
